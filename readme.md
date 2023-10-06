@@ -1,10 +1,12 @@
 # Bank Account System
 
+**IMPORTANT NOTES**: To me flowchart doesn't make sense to account user input. To me the a flowchart process start after using clicks something. To accomodate it, I created additional flowchart in main to explain how a user might use it.
+
 This system represents a basic simulation of a bank account using Object Oriented Principles in JavaScript.
 
 ## Overview:
 
-### OO Principles:
+### Features:
 
 1. **Encapsulation**:
 
@@ -21,7 +23,7 @@ This system represents a basic simulation of a bank account using Object Oriente
 1. **Asynchronous Functions**:
    - Several methods, such as `init`, `reqWithdraw`, and `reqDeposit`, use async functions for simulating server responses.
 
-### Features:
+### Classes:
 
 1. **BaseAccount**:
 
@@ -41,8 +43,8 @@ This system represents a basic simulation of a bank account using Object Oriente
 ### Usage:
 
 1. Create a new `Server` instance.
-2. Create a new `BankAccount` instance, passing the `Server` instance to it.
-3. Initialize the bank account using the `init` method.
+1. Create a new `BankAccount` instance, passing the `Server` instance to it.
+1. Initialize the bank account using the `init` method.
 
 ### Example:
 
@@ -79,7 +81,13 @@ bankAccount.init();
 1. Mengurai proses berpikir dengan menggunakan flowchart (30 points)
 1. Menggunakan GitHub untuk mengelola repository (30 points)
 
-## Pseudocode
+## Algorithm
+
+### Flowchart
+
+![Flowchart](./flowchart/drawio.jpg)
+
+### Pseudocode
 
 Pseudocode:
 
