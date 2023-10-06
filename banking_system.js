@@ -20,7 +20,7 @@ class BankAccount {
     this.btnSub.addEventListener("click", () => this.requestKurangiSaldo());
   }
 
-  tambahSaldo(jumlah) {
+  deposit(jumlah) {
 
     return new Promise((resolve, reject) => {
       if (isNaN(jumlah) || jumlah <= 0) {
@@ -40,7 +40,7 @@ class BankAccount {
 
   }
 
-  kurangiSaldo(jumlah) {
+  withdraw(jumlah) {
     return new Promise((resolve, reject) => {
       if (isNaN(jumlah) || jumlah <= 0) {
         reject("Masukkan jumlah yang valid!");
@@ -64,7 +64,7 @@ class BankAccount {
   async requestKurangiSaldo() {
     try {
       const jumlah = parseInt(window.prompt("Masukkan jumlah saldo yang ingin dikurangkan:"));
-      await this.kurangiSaldo(jumlah);
+      await this.withdraw(jumlah);
       alert("Saldo berhasil dikurangkan!");
     } catch (message) {
       alert(message);
@@ -76,7 +76,7 @@ class BankAccount {
   async requestTambahSaldo() {
     try {
       const jumlah = parseInt(window.prompt("Masukkan jumlah saldo yang ingin ditambahkan:"));
-      await this.tambahSaldo(jumlah);
+      await this.deposit(jumlah);
       alert("Saldo berhasil ditambahkan!");
     } catch (message) {
       alert(message);
