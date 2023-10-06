@@ -16,8 +16,8 @@ class BankAccount {
     });
 
     this.updateSaldo();
-    this.btnAdd.addEventListener("click", () => this.requestTambahSaldo());
-    this.btnSub.addEventListener("click", () => this.requestKurangiSaldo());
+    this.btnAdd.addEventListener("click", () => this.reqDeposit());
+    this.btnSub.addEventListener("click", () => this.reqWithdraw());
   }
 
   deposit(jumlah) {
@@ -61,7 +61,7 @@ class BankAccount {
     });
   }
 
-  async requestKurangiSaldo() {
+  async reqWithdraw() {
     try {
       const jumlah = parseInt(window.prompt("Masukkan jumlah saldo yang ingin dikurangkan:"));
       await this.withdraw(jumlah);
@@ -73,7 +73,7 @@ class BankAccount {
 
   }
 
-  async requestTambahSaldo() {
+  async reqDeposit() {
     try {
       const jumlah = parseInt(window.prompt("Masukkan jumlah saldo yang ingin ditambahkan:"));
       await this.deposit(jumlah);
