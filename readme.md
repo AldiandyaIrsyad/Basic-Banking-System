@@ -56,31 +56,6 @@ bankAccount.init();
 
 **Note**: This is a simple simulation and doesn't provide real banking functionalities. Always consider security and best practices when dealing with real-world financial applications.
 
-## Challenge Information
-
-### Skill Metrics
-
-1. Programming Algorithm
-1. Melakukan error handling
-1. Menerapkan Asynchronous process
-1. Menerapkan OOP
-1. Menggunakan Git
-
-### Delivery
-
-1. Membuat repositori baru di GitHub dengan nama "Basic-Banking-System"
-1. Salin file bank_account.js Challenge 1 ke direktori proyek di repositori baru
-1. Membuat file JavaScript baru dengan nama banking_system.js
-1. Implementasikan kelas BankAccount dengan metode deposit() dan withdraw()
-1. Gunakan setTimeout() untuk mensimulasikan operasi transaksi yang asynchronous
-1. Commit dan push perubahan ke repositori GitHub
-
-### Criteria
-
-1. Menggunakan modular class OOP (40 points)
-1. Mengurai proses berpikir dengan menggunakan flowchart (30 points)
-1. Menggunakan GitHub untuk mengelola repository (30 points)
-
 ## Algorithm
 
 ### Flowchart
@@ -124,3 +99,28 @@ Function getSaldo :
         - Update `saldo` with the new balance
     End
 ```
+
+## Challenge Information
+
+### Skill Metrics
+
+1. Programming Algorithm
+1. Melakukan error handling
+1. Menerapkan Asynchronous process
+1. Menerapkan OOP
+1. Menggunakan Git
+
+### Delivery
+
+- [x] Membuat repositori baru di GitHub dengan nama "Basic-Banking-System"
+- [x] Salin file bank_account.js Challenge 1 ke direktori proyek di repositori baru
+- [x] Membuat file JavaScript baru dengan nama banking_system.js
+- [x] Implementasikan kelas BankAccount dengan metode deposit() dan withdraw()
+- [x] Gunakan setTimeout() untuk mensimulasikan operasi transaksi yang asynchronous
+- [x] Commit dan push perubahan ke repositori GitHub
+
+### Criteria
+
+1. Menggunakan modular class OOP (40 points)
+1. Mengurai proses berpikir dengan menggunakan flowchart (30 points)
+1. Menggunakan GitHub untuk mengelola repository (30 points)
