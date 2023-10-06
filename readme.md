@@ -60,7 +60,7 @@ bankAccount.init();
 
 ### Flowchart
 
-![Flowchart](./flowchart/drawio.jpg)
+![Flowchart](./flowchart/flowchart.jpg)
 
 ### Pseudocode
 
