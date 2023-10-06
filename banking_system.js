@@ -1,5 +1,5 @@
 class BaseAccount {
-  #saldo = 0; 
+  #saldo = 0; // encapsulation
   constructor(server) {
     this.server = server;
   }
@@ -13,14 +13,13 @@ class BaseAccount {
     console.log(`Updated saldo: ${newSaldo}`);
   }
 
-  // To be overridden by subclasses to showcase polymorphism
-  accountType() {
-    console.log('Base account type');
-  }
+
 }
 
+// inheritance
 class BankAccount extends BaseAccount {
   constructor(server) {
+
     super(server);
 
     this.btnAdd = document.getElementById("btn-add");
@@ -39,11 +38,11 @@ class BankAccount extends BaseAccount {
     this.btnSub.addEventListener("click", () => this.reqWithdraw());
   }
 
+
+  // overriding
   updateSaldo(newSaldo) {
-    super.updateSaldo(newSaldo); // Calling the base class method
+    super.updateSaldo(newSaldo);
     this.showSaldo.innerHTML = this.formatter.format(newSaldo);
-    // reset the amount input
-    this.amountInput.value = "";
   }
 
 
@@ -51,17 +50,16 @@ class BankAccount extends BaseAccount {
     this.amountInput.disabled = true;
     this.btnAdd.disabled = true;
     this.btnSub.disabled = true;
-    // show loading
     this.loading.classList.remove("hidden");
   }
 
 
-  enable() {
+  reset() {
     this.amountInput.disabled = false;
     this.btnAdd.disabled = false;
     this.btnSub.disabled = false;
-    // hide loading
     this.loading.classList.add("hidden");
+    this.amountInput.value = "";
   }
 
 
@@ -71,9 +69,10 @@ class BankAccount extends BaseAccount {
       const jumlah = parseInt(this.amountInput.value);
       let newSaldo = await this.server.withdraw(jumlah);
       this.updateSaldo(newSaldo);
-      this.enable();
     } catch (message) {
       alert(message);
+    } finally {
+      this.reset();
     }
 
 
@@ -85,9 +84,10 @@ class BankAccount extends BaseAccount {
       const jumlah = parseInt(this.amountInput.value);
       let newSaldo = await this.server.deposit(jumlah);
       this.updateSaldo(newSaldo);
-      this.enable();
     } catch (message) {
       alert(message);
+    } finally {
+      this.reset();
     }
   }
 }
@@ -103,11 +103,12 @@ class Server {
 
   deposit(jumlah) {
     return new Promise((resolve, reject) => {
-      if (isNaN(jumlah) || jumlah <= 0) {
-        reject("Masukkan jumlah yang valid!");
-        return;
-      }
+
       setTimeout(() => {
+        if (isNaN(jumlah) || jumlah <= 0) {
+          reject("Masukkan jumlah yang valid!");
+          return;
+        }
         this.saldo += jumlah;
         this.saveSaldo();
         resolve(this.saldo);
@@ -117,17 +118,18 @@ class Server {
 
   withdraw(jumlah) {
     return new Promise((resolve, reject) => {
-      if (isNaN(jumlah) || jumlah <= 0) {
-        reject("Masukkan jumlah yang valid!");
-        return;
-      }
 
-      if (jumlah > this.saldo) {
-        reject("Saldo Anda tidak cukup!");
-        return;
-      }
 
       setTimeout(() => {
+        if (isNaN(jumlah) || jumlah <= 0) {
+          reject("Masukkan jumlah yang valid!");
+          return;
+        }
+
+        if (jumlah > this.saldo) {
+          reject("Saldo Anda tidak cukup!");
+          return;
+        }
         this.saldo -= jumlah;
         this.saveSaldo();
         resolve(this.saldo);
