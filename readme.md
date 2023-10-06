@@ -1,6 +1,6 @@
 # Bank Account System
 
-**IMPORTANT NOTES**: To me flowchart doesn't make sense to account user input. To me the a flowchart process start after using clicks something. To accomodate it, I created additional flowchart in main to explain how a user might use it.
+**IMPORTANT NOTES**: To me flowchart doesn't make sense to account user event (button input). To me the a flowchart process start after using clicks something. To accomodate it, I created additional flowchart in main to explain how a user might use it.
 
 This system represents a basic simulation of a bank account using Object Oriented Principles in JavaScript.
 
